@@ -7,7 +7,7 @@ function algo($facts, $qu, $rules, $letter)
 				$letter[$qu[$i]] = solve($qu[$i], $rules, $facts);
 				$i++;
 		}
-		var_dump($letter);
+		return ($letter);
 }
 function solve($let, $rules, $facts)
 {

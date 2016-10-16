@@ -153,8 +153,13 @@ while (isset($facts[$i]))
 		$letter[$facts[$i]] = 1;
 	$i++;
 }
-//var_dump(invalid_rule($rules));
-	algo($facts, $qu, $rules, $letter);
-var_dump($letter['E']);
+
 //$c = search_contradictions($rules, $letter, $facts);
+//$letter = algo($facts, $qu, $rules, $letter);
+$qu = str_split($qu);
+foreach ($qu as $key => $v)
+{
+	
+}
+//var_dump($letter);
 ?>
