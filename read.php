@@ -154,7 +154,7 @@ while (isset($facts[$i]))
 	$i++;
 }
 //var_dump(invalid_rule($rules));
-//	algo($facts, $qu, $rules, $letter);
-//var_dump($letter['D']);
-$c = search_contradictions($rules, $letter, $facts);
+	algo($facts, $qu, $rules, $letter);
+var_dump($letter['E']);
+//$c = search_contradictions($rules, $letter, $facts);
 ?>
