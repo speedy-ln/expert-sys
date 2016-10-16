@@ -2,7 +2,7 @@
 # all the required rules and symbols, along with the bonus ones, will be
 # shown here. spacing is not important
 
-C => E
+#C => E
 #A + B + C => D
 #A | B => C
 #A + B => F
@@ -11,11 +11,9 @@ C => E
 #A + B => H + Z
 #C | D =>  X | V
 #E + F => !V
-#A + B <=> C
-#A + B <=> !C
 
 =ABG # Initial facts : A, B and G are true. All others are false.
 # If no facts are initially true, then a simple "=" followed
 # by a newline is used
 
-?E # Queries : What are G, V and X ?
+?C # Queries : What are G, V and X ?

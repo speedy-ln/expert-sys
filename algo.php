@@ -22,7 +22,6 @@ function solve($let, $rules, $facts)
 						$spos = strpos($value, $let);
 						if ($spos !== FALSE)
 						{
-								echo "Running against " . $value . "\n";
 								$i = 1;
 								while (isset($value[strlen($value) - $i]))
 								{
@@ -48,7 +47,6 @@ function solve($let, $rules, $facts)
 														{
 																$add = explode("+", $or[$c]);
 																$f = 0;
-																echo "Running algo for " . $add[0] . "\n";
 																while (isset($add[$f]))
 																{
 																		if ($add[$f][0] == '(')
@@ -68,6 +66,7 @@ function solve($let, $rules, $facts)
 																		}
 																		else if ($add[$f][0] == '!')
 																		{
+																				echo "found ! in " . $add[$f] . "\n";
 																				$add[$f] = ltrim($add[$f], '!');
 																				if (solve($add[$f], $rules, $facts))
 																				{
@@ -119,7 +118,7 @@ function solve($let, $rules, $facts)
 												}
 												if ($brah == 1)
 												{
-														$lol = solve($lit[1], $rules, $facts);
+														$lol = solve($lit[1], $rules, $facts);	
 														if ($lol == $checker)
 																return (1);
 														else
@@ -127,17 +126,28 @@ function solve($let, $rules, $facts)
 												}
 												else
 												{
-														if ($lit[1][strpos($lit[1], $let) - 1] == '!')
+														if (strpos($lit[1], $let) > 0)
 														{
-																if ($checker == 1)
-																		return (0);
-																else
-																		return (1);	
+															if ($lit[1][strpos($lit[1], $let) - 1] == '!')
+															{
+																	if ($checker == 1)
+																			return (0);
+																	else
+																			return (1);	
+															}
+															else
+																	if ($checker == 1)
+																			return (1);
+																	else
+																			return (0);
 														}
-														if ($checker == 1)
-																return (1);
 														else
-																return (0);
+														{
+															if ($checker == 1)
+																	return (1);
+															else
+																	return (0);
+														}
 												}
 										}
 										if ($value[strlen($value) - $i] == '>' && $value[strlen($value) - $i - 1] == '=')
