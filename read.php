@@ -154,12 +154,13 @@ while (isset($facts[$i]))
 	$i++;
 }
 
-//$c = search_contradictions($rules, $letter, $facts);
-//$letter = algo($facts, $qu, $rules, $letter);
-$qu = str_split($qu);
-foreach ($qu as $key => $v)
-{
-	
+$c = search_contradictions($rules, $letter, $facts);
+$letter = algo($facts, $qu, $rules, $letter);
+if (!$c) {
+	$qu = str_split($qu);
+	foreach ($qu as $key => $v) {
+		echo "Value of $v is: $letter[$v]\n";
+	}
 }
 //var_dump($letter);
 ?>
