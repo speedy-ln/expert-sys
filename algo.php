@@ -66,7 +66,6 @@ function solve($let, $rules, $facts)
 																		}
 																		else if ($add[$f][0] == '!')
 																		{
-																				echo "found ! in " . $add[$f] . "\n";
 																				$add[$f] = ltrim($add[$f], '!');
 																				if (solve($add[$f], $rules, $facts))
 																				{

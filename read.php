@@ -83,7 +83,7 @@ if ($argc == 2)
 							$bracket++;
 						else if ($array[0][$i] == ')')
 							$bracket--;
-						if (ctype_upper($array[0][$i]) || ($array[0][$i] == '!' && ctype_upper($array[0][$i + 1])) && $check == 1)
+						else if (ctype_upper($array[0][$i]) || ($array[0][$i] == '!' && ctype_upper($array[0][$i + 1])) && $check == 1)
 							$check = 0;
 						else if (($array[0][$i] == '+' || $array[0][$i] == '|' || $array[0][$i] == '^') && $check == 0)
 							$check = 1;
